@@ -9,7 +9,7 @@ Java 17, Spring Boot 3.2.4, PostgreSQL, Liquibase, MapStruct, Swagger, Gradle
 Kлонируем проект
 
 ```shell
-$ git clone https://git.astondevs.ru/aston/liberty-bank/liberty-bank-java-accountservice.git
+$ git clone https://github.com/Lorensarz/wallet.git
 $ cd wallet
 $ ./gradlew build
 ```
