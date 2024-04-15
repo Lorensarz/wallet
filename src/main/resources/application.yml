@@ -1,0 +1,32 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/wallet_service_db
+    username: user
+    password: pass
+
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true
+    url: jdbc:postgresql://postgres:5432/wallet_service_db
+    default-schema: public
+    liquibase-schema: public
+    user: user
+    password: pass
+
+springdoc:
+  show-actuator: false
+  use-management-port: false
+  api-docs:
+    path: '/api-docs'
+  swagger-ui:
+    groups-order: DESC
+    path: '/swagger-ui'
+    disable-swagger-default-url: true
+    operationsSorter: method
+  default-consumes-media-type: 'application/json'
+  default-produces-media-type: 'application/json'
+  model-converters:
+    pageable-converter:
+      enabled: true
