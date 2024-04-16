@@ -8,10 +8,12 @@ import com.petrov.wallet.db.entities.Wallet;
 import com.petrov.wallet.db.repositories.WalletRepository;
 import com.petrov.wallet.impl.exception.ValidationException;
 import com.petrov.wallet.impl.mapper.WalletMapper;
+import jakarta.persistence.LockModeType;
 import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -75,6 +77,7 @@ public class WalletServiceImpl implements WalletService {
      * @param delta    balance change delta positive or negative
      * @param walletId wallet's id
      */
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
     private Wallet changeAccountBalanceOrThrow(BigDecimal delta, String walletId) {
         Wallet wallet = walletRepository.findById(UUID.fromString(walletId))
                 .orElseThrow(() -> new ValidationException(String.format(NOT_FOUND_MESSAGE, walletId)));
