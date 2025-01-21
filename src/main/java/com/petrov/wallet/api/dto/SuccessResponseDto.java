@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
-import java.time.LocalDateTime;
-
 @Data
 @NoArgsConstructor
 @Schema(description = "Dto for response of success changes wallet")

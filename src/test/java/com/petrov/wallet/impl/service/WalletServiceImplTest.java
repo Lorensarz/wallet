@@ -8,7 +8,6 @@ import com.petrov.wallet.db.entities.enums.WalletType;
 import com.petrov.wallet.db.repositories.WalletRepository;
 import com.petrov.wallet.impl.exception.ValidationException;
 import com.petrov.wallet.impl.mapper.WalletMapper;
-import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,8 +37,6 @@ class WalletServiceImplTest {
     private BigDecimal bigDecimal = BigDecimal.TEN;
 
     WalletType walletType = WalletType.PAYMENT;
-
-    LocalDateTime timeStamp = LocalDateTime.of(2024, 1, 1, 1, 0);
 
     @BeforeEach
     void setUp() {

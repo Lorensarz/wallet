@@ -20,12 +20,11 @@ import org.hibernate.annotations.GenericGenerator;
 /**
  * Wallet entity.
  */
-
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Table(name = "wallet")
 public class Wallet {
 
