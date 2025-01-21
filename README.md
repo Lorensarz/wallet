@@ -1,4 +1,3 @@
-# Liberty Bank - Java - AccountService
 # Сервис для работы со счетами клиентов
 
 ## Стек:
